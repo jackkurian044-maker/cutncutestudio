@@ -339,10 +339,16 @@
   .section-head p{ margin-top:.9rem; color:var(--muted); }
 
   .service-grid{
-    display:grid; grid-template-columns:repeat(auto-fit, minmax(270px,1fr));
+    display:grid; grid-template-columns:1fr;
     gap:1px; max-width:1120px; margin:0 auto;
     background:var(--line);
     border:1px solid var(--line);
+  }
+  @media (min-width:640px){
+    .service-grid{ grid-template-columns:repeat(2,1fr); }
+  }
+  @media (min-width:1000px){
+    .service-grid{ grid-template-columns:repeat(3,1fr); }
   }
   .service-card{
     background:var(--surface);
