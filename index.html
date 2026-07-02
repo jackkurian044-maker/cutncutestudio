@@ -127,6 +127,32 @@
     .gallery-grid{ grid-template-columns:1fr; }
   }
 
+  /* ---------- REVIEWS ---------- */
+  .reviews{ padding:6rem 6vw; }
+  .reviews-head{ text-align:center; max-width:600px; margin:0 auto 1rem; }
+  .reviews-head h2{ font-size:clamp(2rem,3.8vw,2.6rem); color:var(--ivory); }
+  .reviews-head .stars{ color:var(--gold); font-size:1.1rem; letter-spacing:.15em; margin-top:.8rem; }
+  .reviews-head .subline{ margin-top:.5rem; color:var(--muted); font-size:.9rem; }
+  .reviews-head .subline a{ color:var(--gold-soft); text-decoration:underline; }
+
+  .review-grid{
+    display:grid; grid-template-columns:1fr; gap:1px;
+    max-width:1120px; margin:3rem auto 0;
+    background:var(--line); border:1px solid var(--line);
+  }
+  @media (min-width:800px){
+    .review-grid{ grid-template-columns:repeat(3,1fr); }
+  }
+  .review-card{ background:var(--surface); padding:2.2rem 1.9rem; }
+  .review-card .stars{ color:var(--gold); font-size:.85rem; letter-spacing:.1em; }
+  .review-card p.quote{
+    margin-top:1rem; font-size:.98rem; line-height:1.7; color:var(--ivory-dim,var(--ivory)); opacity:.9;
+    font-style:italic; font-family:'Fraunces', serif; font-weight:400;
+  }
+  .review-card .author{
+    margin-top:1.2rem; font-size:.82rem; letter-spacing:.04em; color:var(--muted);
+    text-transform:uppercase;
+  }
   section{ scroll-margin-top:84px; }
 
   @media (prefers-reduced-motion: reduce){
@@ -547,6 +573,34 @@
     </div>
   </div>
 </section>
+
+<section class="reviews" id="reviews">
+  <div class="reviews-head">
+    <span class="eyebrow">Word Of Mouth</span>
+    <h2>What our clients say</h2>
+    <div class="stars">★★★★★</div>
+    <p class="subline">4.7 average across 251 <a href="https://g.page/r/CXNEND3NVgWKEAI/review" target="_blank" rel="noopener">Google Reviews</a> — placeholder quotes below, real ones coming soon.</p>
+  </div>
+  <div class="review-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="quote">"Been coming here for over a year now — the stylists actually listen before they pick up the scissors. Never had a bad cut."</p>
+      <div class="author">— Placeholder Review, Ladies Haircut</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="quote">"Good value for a proper beard trim and haircut. Clean space, no long waits even on a Saturday evening."</p>
+      <div class="author">— Placeholder Review, Gents Grooming</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="quote">"Took my daughter for her first proper haircut and the staff were so patient with her. Will be back for sure."</p>
+      <div class="author">— Placeholder Review, Kids' Cut</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
   <div class="contact-wrap">
     <div class="contact-info">
       <span class="eyebrow">Visit Us</span>
