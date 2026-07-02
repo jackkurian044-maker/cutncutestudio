@@ -271,9 +271,17 @@
   .call-now:hover{ color:var(--gold); }
 
   @media (max-width:860px){ nav ul{ display:none; } }
+  @media (max-width:640px){
+    header{ flex-wrap:wrap; row-gap:.7rem; padding:16px 5vw; }
+    .logo{ flex:1 1 auto; min-width:0; }
+    .logo img{ height:38px; width:38px; flex-shrink:0; }
+    .logo .wordmark{ font-size:.9rem; }
+    .header-actions{ flex:1 1 100%; justify-content:space-between; gap:.8rem; }
+  }
   @media (max-width:520px){
     .call-now .label{ display:none; }
-    .call-now{ font-size:.95rem; }
+    .call-now{ font-size:.9rem; }
+    .nav-cta{ padding:9px 18px; font-size:.72rem; }
   }
 
   /* ---------- HERO ---------- */
