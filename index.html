@@ -13,7 +13,7 @@
 <meta property="og:title" content="Cut N Cute Studio | Unisex Hair & Beauty Salon, Kodihalli">
 <meta property="og:description" content="Affordable to premium haircuts, colour, styling & grooming for men and women. Unisex salon in Kodihalli, Bengaluru. Open every day, 8 AM–10 PM.">
 <meta property="og:url" content="https://jackkurian044-maker.github.io/cutncutestudio/">
-<meta property="og:image" content="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:image" content="https://jackkurian044-maker.github.io/cutncutestudio/logo.jpeg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Cut N Cute Studio | Unisex Hair & Beauty Salon, Kodihalli">
 <meta name="twitter:description" content="Affordable to premium haircuts, colour, styling & grooming for men and women in Kodihalli, Bengaluru.">
@@ -26,7 +26,7 @@
   "@context": "https://schema.org",
   "@type": "HairSalon",
   "name": "Cut N Cute Studio",
-  "image": "https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?auto=format&fit=crop&w=1200&q=80",
+  "image": "https://jackkurian044-maker.github.io/cutncutestudio/logo.jpeg",
   "url": "https://jackkurian044-maker.github.io/cutncutestudio/",
   "telephone": "+91-7996700707",
   "priceRange": "₹₹",
@@ -204,12 +204,23 @@
     border-bottom:1px solid var(--line);
   }
   .logo{
+    display:flex; align-items:center; gap:.7rem;
     font-family:'Fraunces', serif;
     font-style:italic;
     font-weight:500;
-    font-size:1.5rem;
+    font-size:1.15rem;
     color:var(--ivory);
     letter-spacing:.01em;
+  }
+  .logo img{
+    height:48px; width:48px; border-radius:50%;
+    object-fit:cover;
+  }
+  .logo .wordmark{ line-height:1.15; }
+  .logo .wordmark small{
+    display:block; font-family:'Work Sans', sans-serif; font-style:normal;
+    font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+    margin-top:1px;
   }
   .logo span{ color:var(--gold); }
 
@@ -342,18 +353,14 @@
     z-index:1;
     flex-shrink:0;
   }
-  .badge-ring{
-    position:absolute; inset:0;
-    animation: spin 42s linear infinite;
+  .hero-logo{
+    width:100%; height:100%;
+    border-radius:50%;
+    object-fit:cover;
+    animation: spin 60s linear infinite;
+    box-shadow:0 0 0 1px var(--line), 0 20px 60px rgba(0,0,0,0.45);
   }
   @keyframes spin{ to{ transform:rotate(360deg); } }
-  .badge-center{
-    position:absolute; inset:0;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Fraunces', serif; font-style:italic;
-    font-size:2.6rem; color:var(--gold-soft);
-    letter-spacing:.02em;
-  }
 
   @media (max-width:900px){
     .hero{ flex-direction:column; text-align:left; padding-top:3.5rem; }
@@ -513,7 +520,10 @@
 </div>
 
 <header>
-  <a href="#top" class="logo">Cut N Cute <span>Studio-</span> <span>Unisex Salon</span></a>
+  <a href="#top" class="logo">
+    <img src="logo.jpeg" alt="Cut N Cute Studio logo">
+    <span class="wordmark">Cut N Cute <span style="color:var(--gold)">Studio</span><small>Unisex Salon</small></span>
+  </a>
   <nav>
     <ul>
       <li><a href="#about">About</a></li>
@@ -540,17 +550,7 @@
   </div>
 
   <div class="hero-art">
-    <svg class="badge-ring" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <path id="ringpath" d="M150,150 m-120,0 a120,120 0 1,1 240,0 a120,120 0 1,1 -240,0"/>
-      </defs>
-      <circle cx="150" cy="150" r="146" fill="none" stroke="rgba(201,162,74,0.35)" stroke-width="1"/>
-      <circle cx="150" cy="150" r="120" fill="none" stroke="rgba(201,162,74,0.5)" stroke-width="1"/>
-      <text font-family="Work Sans" font-size="12.5" letter-spacing="4" fill="#C9A24A">
-        <textPath href="#ringpath" startOffset="0%">CUT N CUTE STUDIO &#8226; KODIHALLI &#8226; EST. LOCAL &#8226; </textPath>
-      </text>
-    </svg>
-    <div class="badge-center">C&amp;C</div>
+    <img src="logo.jpeg" alt="Cut N Cute Studio badge logo" class="hero-logo">
   </div>
 </section>
 
@@ -620,7 +620,7 @@
   </div>
   <div class="gallery-grid">
     <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?auto=format&fit=crop&w=1200&q=80" alt="Woman getting a haircut and style at the salon" loading="lazy">
+      <img src="https://jackkurian044-maker.github.io/cutncutestudio/logo.jpeg" alt="Woman getting a haircut and style at the salon" loading="lazy">
       <div class="gallery-caption">
         <div class="cat">Ladies</div>
         <h3>Cut, Colour &amp; Style</h3>
