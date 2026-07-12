@@ -252,8 +252,8 @@ const SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbw0ssj_vNZIaw
    ============================================================ */
 const SERVICES = [
   // ---- Hair ----
-  {id:1, cat:'Hair', name:'Signature Haircut — Women', price:399, dur:45, desc:'Wash, consultation, cut & style shaped around your face.'},
-  {id:2, cat:'Hair', name:'Signature Haircut — Men', price:99, dur:30, desc:'Intro offer — wash, consultation, cut & style.'},
+  {id:1, cat:'Hair', name:'Haircut — Women', price:399, dur:45, desc:'Wash, consultation, cut & style shaped around your face.'},
+  {id:2, cat:'Hair', name:'Haircut — Men', price:99, dur:30, desc:'Intro offer — wash, consultation, cut & style.'},
   {id:3, cat:'Hair', name:'Basic Cut', price:499, dur:30, desc:'Straightforward cut, no fuss.'},
   {id:4, cat:'Hair', name:'Layer Cut', price:799, dur:45, desc:'Layered shape for movement and volume.'},
   {id:5, cat:'Hair', name:'Advanced Cut', price:1199, dur:60, desc:'Precision cut with detailed finishing.'},
@@ -327,16 +327,16 @@ const SERVICES = [
   {id:53, cat:'Waxing', name:'Bikini Wax', price:1199, dur:30, desc:'Normal wax.'},
   {id:54, cat:'Waxing', name:'Full Body Wax', price:1600, dur:60, desc:'Normal wax.'},
 
-  // ---- Rice Wax ----
-  {id:55, cat:'Rice Wax', name:'Upper Lip Rice Wax', price:49, dur:10, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:56, cat:'Rice Wax', name:'Cheeks Rice Wax', price:119, dur:15, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:57, cat:'Rice Wax', name:'Under Arms Rice Wax', price:199, dur:20, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:58, cat:'Rice Wax', name:'Half Leg Rice Wax', price:449, dur:30, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:59, cat:'Rice Wax', name:'Full Leg Rice Wax', price:899, dur:45, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:60, cat:'Rice Wax', name:'Stomach Rice Wax', price:599, dur:30, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:61, cat:'Rice Wax', name:'Back Rice Wax', price:749, dur:40, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:62, cat:'Rice Wax', name:'Bikini Rice Wax', price:1299, dur:35, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:63, cat:'Rice Wax', name:'Full Body Rice Wax', price:2799, dur:75, desc:'Gentler rice wax, lifts finer hair.'},
+  // ---- Rica Wax ----
+  {id:55, cat:'Rica Wax', name:'Upper Lip Rica Wax', price:49, dur:10, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:56, cat:'Rica Wax', name:'Cheeks Rica Wax', price:119, dur:15, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:57, cat:'Rica Wax', name:'Under Arms Rica Wax', price:199, dur:20, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:58, cat:'Rica Wax', name:'Half Leg Rica Wax', price:449, dur:30, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:59, cat:'Rica Wax', name:'Full Leg Rica Wax', price:899, dur:45, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:60, cat:'Rica Wax', name:'Stomach Rica Wax', price:599, dur:30, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:61, cat:'Rica Wax', name:'Back Rica Wax', price:749, dur:40, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:62, cat:'Rica Wax', name:'Bikini Rica Wax', price:1299, dur:35, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:63, cat:'Rica Wax', name:'Full Body Rica Wax', price:2799, dur:75, desc:'Gentler rice wax, lifts finer hair.'},
 
   // ---- Pedicure ----
   {id:64, cat:'Pedicure', name:'Normal Pedicure', price:499, dur:45, desc:'Standard pedicure.'},
@@ -361,7 +361,7 @@ const SERVICES = [
   {id:79, cat:"Men's Packages", name:'Package 6', price:1599, dur:120, desc:'Stylish hair cut + Stylish beard + Head massage + Face D-tan + Lotus facial (value ₹2150).'},
 ];
 
-const CATEGORIES = ['All','Hair','Colour','Style','Hair Spa','Kids','Grooming','Treatment','Facial','Skin Care','Threading','Waxing','Rice Wax','Pedicure','Manicure',"Men's Packages"];
+const CATEGORIES = ['All','Hair','Colour','Style','Hair Spa','Kids','Grooming','Treatment','Facial','Skin Care','Threading','Waxing','Rica Wax','Pedicure','Manicure',"Men's Packages"];
 
 let state = {
   step: 1, search: '', activeCat: 'All', selected: [],
