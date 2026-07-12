@@ -252,121 +252,125 @@ const SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbw0ssj_vNZIaw
    ============================================================ */
 const SERVICES = [
   // ---- Hair ----
-  {id:1, cat:'Hair', name:'Haircut — Women', price:399, dur:30, desc:'Any haircut, with a free consultation.'},
-  {id:2, cat:'Hair', name:'Haircut — Men', price:99, dur:20, desc:'Intro offer — any haircut, with a free consultation.'},
-  {id:3, cat:'Hair', name:'Basic Cut', price:499, dur:30, desc:'Straightforward cut, no fuss.'},
-  {id:4, cat:'Hair', name:'Layer Cut', price:799, dur:45, desc:'Layered shape for movement and volume.'},
-  {id:5, cat:'Hair', name:'Advanced Cut', price:1199, dur:60, desc:'Precision cut with detailed finishing.'},
+  {id:1, cat:'Hair', gender:'Women', name:'Haircut — Women', price:399, dur:30, desc:'Any haircut, with a free consultation.'},
+  {id:2, cat:'Hair', gender:'Men', name:'Haircut — Men', price:99, dur:20, desc:'Intro offer — any haircut, with a free consultation.'},
+  {id:3, cat:'Hair', gender:'Unisex', name:'Basic Cut', price:499, dur:30, desc:'Straightforward cut, no fuss.'},
+  {id:4, cat:'Hair', gender:'Unisex', name:'Layer Cut', price:799, dur:45, desc:'Layered shape for movement and volume.'},
+  {id:5, cat:'Hair', gender:'Unisex', name:'Advanced Cut', price:1199, dur:60, desc:'Precision cut with detailed finishing.'},
 
   // ---- Colour ----
-  {id:6, cat:'Colour', name:'Colour & Highlights', price:1499, dur:90, desc:'Soft balayage to full colour, mixed fresh for your tone.'},
-  {id:7, cat:'Colour', name:"L'Oréal Root Touch-Up", price:1499, dur:60, desc:'Fresh root colour match.'},
-  {id:8, cat:'Colour', name:'Global Hair Colour', price:3499, dur:120, desc:'Full head colour transformation.'},
-  {id:9, cat:'Colour', name:'Gold Highlights (per streak)', price:349, dur:20, desc:'Priced per streak — ask your stylist how many you need.'},
-  {id:10, cat:'Colour', name:'Hair Straightening', price:4999, dur:150, desc:'Smooth, straight finish.'},
-  {id:11, cat:'Colour', name:'Bootex', price:6999, dur:180, desc:'Advanced smoothing treatment.'},
+  {id:6, cat:'Colour', gender:'Unisex', name:'Colour & Highlights', price:1499, dur:90, desc:'Soft balayage to full colour, mixed fresh for your tone.'},
+  {id:7, cat:'Colour', gender:'Unisex', name:"L'Oréal Root Touch-Up", price:1499, dur:60, desc:'Fresh root colour match.'},
+  {id:8, cat:'Colour', gender:'Unisex', name:'Global Hair Colour', price:3499, dur:120, desc:'Full head colour transformation.'},
+  {id:9, cat:'Colour', gender:'Unisex', name:'Gold Highlights (per streak)', price:349, dur:20, desc:'Priced per streak — ask your stylist how many you need.'},
+  {id:10, cat:'Colour', gender:'Unisex', name:'Hair Straightening', price:4999, dur:150, desc:'Smooth, straight finish.'},
+  {id:11, cat:'Colour', gender:'Unisex', name:'Botox', price:6999, dur:180, desc:'Advanced smoothing treatment.'},
 
   // ---- Style ----
-  {id:12, cat:'Style', name:'Blowout & Styling', price:599, dur:45, desc:'Event-ready hair in under an hour.'},
-  {id:13, cat:'Style', name:'Hair Wash', price:299, dur:15, desc:'Cleansing wash.'},
-  {id:14, cat:'Style', name:'Blow Dry', price:399, dur:20, desc:'Smooth, styled blow dry finish.'},
+  {id:12, cat:'Style', gender:'Unisex', name:'Blowout & Styling', price:599, dur:45, desc:'Event-ready hair in under an hour.'},
+  {id:13, cat:'Style', gender:'Women', name:'Hair Wash — Women', price:299, dur:15, desc:'Cleansing wash.'},
+  {id:14, cat:'Style', gender:'Women', name:'Blow Dry — Women', price:399, dur:20, desc:'Smooth, styled blow dry finish.'},
+  {id:80, cat:'Style', gender:'Men', name:'Hair Wash — Men', price:100, dur:15, desc:'Cleansing wash.'},
+  {id:81, cat:'Style', gender:'Men', name:'Blow Dry — Men', price:299, dur:20, desc:'Smooth, styled blow dry finish.'},
 
   // ---- Hair Spa ----
-  {id:15, cat:'Hair Spa', name:'Town Sculls', price:799, dur:45, desc:'Scalp & strand refresh treatment.'},
-  {id:16, cat:'Hair Spa', name:"L'Oréal Professional Spa", price:1199, dur:60, desc:'Salon-grade nourishing spa.'},
-  {id:17, cat:'Hair Spa', name:'Bio Keratin', price:1499, dur:75, desc:'Keratin-based smoothing spa.'},
-  {id:18, cat:'Hair Spa', name:'Shea Butter', price:1799, dur:90, desc:'Deep moisture spa treatment.'},
+  {id:15, cat:'Hair Spa', gender:'Unisex', name:'Town Sculls', price:799, dur:45, desc:'Scalp & strand refresh treatment.'},
+  {id:16, cat:'Hair Spa', gender:'Unisex', name:"L'Oréal Professional Spa", price:1199, dur:60, desc:'Salon-grade nourishing spa.'},
+  {id:17, cat:'Hair Spa', gender:'Unisex', name:'Bio Keratin', price:1499, dur:75, desc:'Keratin-based smoothing spa.'},
+  {id:18, cat:'Hair Spa', gender:'Unisex', name:'Shea Butter', price:1799, dur:90, desc:'Deep moisture spa treatment.'},
 
   // ---- Kids ----
-  {id:19, cat:'Kids', name:"Kids' Cut", price:249, dur:30, desc:'Patient stylists, calm chair — ages 3 to 12.'},
+  {id:19, cat:'Kids', gender:'Unisex', name:"Kids' Cut", price:249, dur:30, desc:'Patient stylists, calm chair — ages 3 to 12.'},
 
   // ---- Grooming ----
-  {id:20, cat:'Grooming', name:'Beard & Grooming', price:200, dur:20, desc:'Sharp lines and a hot towel finish.'},
+  {id:20, cat:'Grooming', gender:'Men', name:'Beard & Grooming', price:200, dur:20, desc:'Sharp lines and a hot towel finish.'},
 
   // ---- Treatment ----
-  {id:21, cat:'Treatment', name:'Deep Repair Treatment', price:1299, dur:60, desc:'Keratin, protein & moisture for tired hair.'},
+  {id:21, cat:'Treatment', gender:'Unisex', name:'Deep Repair Treatment', price:1299, dur:60, desc:'Keratin, protein & moisture for tired hair.'},
 
   // ---- Facial ----
-  {id:22, cat:'Facial', name:'Normal Facial', price:699, dur:45, desc:'Everyday refresh facial.'},
-  {id:23, cat:'Facial', name:'Fruit Facial', price:799, dur:45, desc:'Fruit-based brightening facial.'},
-  {id:24, cat:'Facial', name:'Wine Facial', price:999, dur:60, desc:'Antioxidant-rich wine facial.'},
-  {id:25, cat:'Facial', name:'Lotus Facial', price:1299, dur:60, desc:'Lotus facial for a natural glow.'},
-  {id:26, cat:'Facial', name:'Raaga Facial', price:1499, dur:75, desc:'Raaga signature facial.'},
-  {id:27, cat:'Facial', name:'Shenaaz Facial', price:1699, dur:75, desc:'Shenaaz signature facial.'},
-  {id:28, cat:'Facial', name:'O3 Facial Basic', price:1799, dur:75, desc:'O3 oxygen facial, basic tier.'},
-  {id:29, cat:'Facial', name:'O3 Whitening Facial', price:2499, dur:90, desc:'O3 facial with whitening treatment.'},
-  {id:30, cat:'Facial', name:'O3 Gold Facial', price:2999, dur:90, desc:'O3 facial, premium gold tier.'},
-  {id:31, cat:'Facial', name:'Korean Facial', price:3199, dur:90, desc:'Korean-style multi-step facial.'},
+  {id:22, cat:'Facial', gender:'Unisex', name:'Normal Facial', price:699, dur:45, desc:'Everyday refresh facial.'},
+  {id:23, cat:'Facial', gender:'Unisex', name:'Fruit Facial', price:799, dur:45, desc:'Fruit-based brightening facial.'},
+  {id:24, cat:'Facial', gender:'Unisex', name:'Wine Facial', price:999, dur:60, desc:'Antioxidant-rich wine facial.'},
+  {id:25, cat:'Facial', gender:'Unisex', name:'Lotus Facial', price:1299, dur:60, desc:'Lotus facial for a natural glow.'},
+  {id:26, cat:'Facial', gender:'Unisex', name:'Raaga Facial', price:1499, dur:75, desc:'Raaga signature facial.'},
+  {id:27, cat:'Facial', gender:'Unisex', name:'Shenaaz Facial', price:1699, dur:75, desc:'Shenaaz signature facial.'},
+  {id:28, cat:'Facial', gender:'Unisex', name:'O3 Facial Basic', price:1799, dur:75, desc:'O3 oxygen facial, basic tier.'},
+  {id:29, cat:'Facial', gender:'Unisex', name:'O3 Whitening Facial', price:2499, dur:90, desc:'O3 facial with whitening treatment.'},
+  {id:30, cat:'Facial', gender:'Unisex', name:'O3 Gold Facial', price:2999, dur:90, desc:'O3 facial, premium gold tier.'},
+  {id:31, cat:'Facial', gender:'Unisex', name:'Korean Facial', price:3199, dur:90, desc:'Korean-style multi-step facial.'},
 
   // ---- Skin Care ----
-  {id:32, cat:'Skin Care', name:'Naturals De-Tan', price:349, dur:30, desc:'De-tan treatment, Naturals range.'},
-  {id:33, cat:'Skin Care', name:'Oxy De-Tan', price:399, dur:30, desc:'Oxygen-based de-tan treatment.'},
-  {id:34, cat:'Skin Care', name:'Ozen De-Tan', price:449, dur:35, desc:'Ozen de-tan treatment.'},
-  {id:35, cat:'Skin Care', name:'Raaga De-Tan', price:499, dur:40, desc:'Raaga de-tan treatment.'},
-  {id:36, cat:'Skin Care', name:'O3+ De-Tan', price:699, dur:45, desc:'Premium O3+ de-tan treatment.'},
-  {id:37, cat:'Skin Care', name:'Face Scrub', price:199, dur:20, desc:'Exfoliating face scrub.'},
-  {id:38, cat:'Skin Care', name:'Face Massage', price:199, dur:20, desc:'Relaxing face massage.'},
-  {id:39, cat:'Skin Care', name:'Bleach', price:499, dur:30, desc:'Face bleach treatment.'},
+  {id:32, cat:'Skin Care', gender:'Unisex', name:'Naturals De-Tan', price:349, dur:30, desc:'De-tan treatment, Naturals range.'},
+  {id:33, cat:'Skin Care', gender:'Unisex', name:'Oxy De-Tan', price:399, dur:30, desc:'Oxygen-based de-tan treatment.'},
+  {id:34, cat:'Skin Care', gender:'Unisex', name:'Ozen De-Tan', price:449, dur:35, desc:'Ozen de-tan treatment.'},
+  {id:35, cat:'Skin Care', gender:'Unisex', name:'Raaga De-Tan', price:499, dur:40, desc:'Raaga de-tan treatment.'},
+  {id:36, cat:'Skin Care', gender:'Unisex', name:'O3+ De-Tan', price:699, dur:45, desc:'Premium O3+ de-tan treatment.'},
+  {id:37, cat:'Skin Care', gender:'Unisex', name:'Face Scrub', price:199, dur:20, desc:'Exfoliating face scrub.'},
+  {id:38, cat:'Skin Care', gender:'Unisex', name:'Face Massage', price:199, dur:20, desc:'Relaxing face massage.'},
+  {id:39, cat:'Skin Care', gender:'Unisex', name:'Bleach', price:499, dur:30, desc:'Face bleach treatment.'},
 
   // ---- Threading ----
-  {id:40, cat:'Threading', name:'Eyebrow Threading', price:49, dur:10, desc:'Clean brow shaping.'},
-  {id:41, cat:'Threading', name:'Upper Lip Threading', price:29, dur:5, desc:'Upper lip threading.'},
-  {id:42, cat:'Threading', name:'Chin Threading', price:29, dur:5, desc:'Chin threading.'},
-  {id:43, cat:'Threading', name:'Forehead Threading', price:29, dur:5, desc:'Forehead threading.'},
-  {id:44, cat:'Threading', name:'Full Face Threading', price:249, dur:20, desc:'Complete face threading.'},
+  {id:40, cat:'Threading', gender:'Unisex', name:'Eyebrow Threading', price:49, dur:10, desc:'Clean brow shaping.'},
+  {id:41, cat:'Threading', gender:'Unisex', name:'Upper Lip Threading', price:29, dur:5, desc:'Upper lip threading.'},
+  {id:42, cat:'Threading', gender:'Unisex', name:'Chin Threading', price:29, dur:5, desc:'Chin threading.'},
+  {id:43, cat:'Threading', gender:'Unisex', name:'Forehead Threading', price:29, dur:5, desc:'Forehead threading.'},
+  {id:44, cat:'Threading', gender:'Unisex', name:'Full Face Threading', price:249, dur:20, desc:'Complete face threading.'},
 
   // ---- Waxing ----
-  {id:45, cat:'Waxing', name:'Upper Lip Wax', price:49, dur:10, desc:'Normal wax.'},
-  {id:46, cat:'Waxing', name:'Under Arms Wax', price:149, dur:15, desc:'Normal wax.'},
-  {id:47, cat:'Waxing', name:'Full Hand Wax', price:249, dur:20, desc:'Normal wax.'},
-  {id:48, cat:'Waxing', name:'Half Leg Wax', price:249, dur:20, desc:'Normal wax.'},
-  {id:49, cat:'Waxing', name:'Full Leg Wax', price:499, dur:30, desc:'Normal wax.'},
-  {id:50, cat:'Waxing', name:'Stomach Wax', price:349, dur:20, desc:'Normal wax.'},
-  {id:51, cat:'Waxing', name:'Full Face Wax', price:349, dur:20, desc:'Normal wax.'},
-  {id:52, cat:'Waxing', name:'Back Wax', price:449, dur:30, desc:'Normal wax.'},
-  {id:53, cat:'Waxing', name:'Bikini Wax', price:1199, dur:30, desc:'Normal wax.'},
-  {id:54, cat:'Waxing', name:'Full Body Wax', price:1600, dur:60, desc:'Normal wax.'},
+  {id:45, cat:'Waxing', gender:'Unisex', name:'Upper Lip Wax', price:49, dur:10, desc:'Normal wax.'},
+  {id:46, cat:'Waxing', gender:'Unisex', name:'Under Arms Wax', price:149, dur:15, desc:'Normal wax.'},
+  {id:47, cat:'Waxing', gender:'Unisex', name:'Full Hand Wax', price:249, dur:20, desc:'Normal wax.'},
+  {id:48, cat:'Waxing', gender:'Unisex', name:'Half Leg Wax', price:249, dur:20, desc:'Normal wax.'},
+  {id:49, cat:'Waxing', gender:'Unisex', name:'Full Leg Wax', price:499, dur:30, desc:'Normal wax.'},
+  {id:50, cat:'Waxing', gender:'Unisex', name:'Stomach Wax', price:349, dur:20, desc:'Normal wax.'},
+  {id:51, cat:'Waxing', gender:'Unisex', name:'Full Face Wax', price:349, dur:20, desc:'Normal wax.'},
+  {id:52, cat:'Waxing', gender:'Unisex', name:'Back Wax', price:449, dur:30, desc:'Normal wax.'},
+  {id:53, cat:'Waxing', gender:'Women', name:'Bikini Wax', price:1199, dur:30, desc:'Normal wax.'},
+  {id:54, cat:'Waxing', gender:'Unisex', name:'Full Body Wax', price:1600, dur:60, desc:'Normal wax.'},
 
   // ---- Rica Wax ----
-  {id:55, cat:'Rica Wax', name:'Upper Lip Rica Wax', price:49, dur:10, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:56, cat:'Rica Wax', name:'Cheeks Rica Wax', price:119, dur:15, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:57, cat:'Rica Wax', name:'Under Arms Rica Wax', price:199, dur:20, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:58, cat:'Rica Wax', name:'Half Leg Rica Wax', price:449, dur:30, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:59, cat:'Rica Wax', name:'Full Leg Rica Wax', price:899, dur:45, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:60, cat:'Rica Wax', name:'Stomach Rica Wax', price:599, dur:30, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:61, cat:'Rica Wax', name:'Back Rica Wax', price:749, dur:40, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:62, cat:'Rica Wax', name:'Bikini Rica Wax', price:1299, dur:35, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:63, cat:'Rica Wax', name:'Full Body Rica Wax', price:2799, dur:75, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:55, cat:'Rica Wax', gender:'Unisex', name:'Upper Lip Rica Wax', price:49, dur:10, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:56, cat:'Rica Wax', gender:'Unisex', name:'Cheeks Rica Wax', price:119, dur:15, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:57, cat:'Rica Wax', gender:'Unisex', name:'Under Arms Rica Wax', price:199, dur:20, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:58, cat:'Rica Wax', gender:'Unisex', name:'Half Leg Rica Wax', price:449, dur:30, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:59, cat:'Rica Wax', gender:'Unisex', name:'Full Leg Rica Wax', price:899, dur:45, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:60, cat:'Rica Wax', gender:'Unisex', name:'Stomach Rica Wax', price:599, dur:30, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:61, cat:'Rica Wax', gender:'Unisex', name:'Back Rica Wax', price:749, dur:40, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:62, cat:'Rica Wax', gender:'Women', name:'Bikini Rica Wax', price:1299, dur:35, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:63, cat:'Rica Wax', gender:'Unisex', name:'Full Body Rica Wax', price:2799, dur:75, desc:'Gentler rice wax, lifts finer hair.'},
 
   // ---- Pedicure ----
-  {id:64, cat:'Pedicure', name:'Normal Pedicure', price:499, dur:45, desc:'Standard pedicure.'},
-  {id:65, cat:'Pedicure', name:'Crystal Pedicure', price:999, dur:60, desc:'Crystal pedicure treatment.'},
-  {id:66, cat:'Pedicure', name:'Gel Pedicure', price:1499, dur:75, desc:'Gel pedicure treatment.'},
-  {id:67, cat:'Pedicure', name:'Raaga Chocolate Pedicure', price:999, dur:60, desc:'Raaga chocolate pedicure.'},
-  {id:68, cat:'Pedicure', name:'Raaga Strawberry Pedicure', price:999, dur:60, desc:'Raaga strawberry pedicure.'},
+  {id:64, cat:'Pedicure', gender:'Unisex', name:'Normal Pedicure', price:499, dur:45, desc:'Standard pedicure.'},
+  {id:65, cat:'Pedicure', gender:'Unisex', name:'Crystal Pedicure', price:999, dur:60, desc:'Crystal pedicure treatment.'},
+  {id:66, cat:'Pedicure', gender:'Unisex', name:'Gel Pedicure', price:1499, dur:75, desc:'Gel pedicure treatment.'},
+  {id:67, cat:'Pedicure', gender:'Unisex', name:'Raaga Chocolate Pedicure', price:999, dur:60, desc:'Raaga chocolate pedicure.'},
+  {id:68, cat:'Pedicure', gender:'Unisex', name:'Raaga Strawberry Pedicure', price:999, dur:60, desc:'Raaga strawberry pedicure.'},
 
   // ---- Manicure ----
-  {id:69, cat:'Manicure', name:'Normal Manicure', price:499, dur:30, desc:'Standard manicure.'},
-  {id:70, cat:'Manicure', name:'Crystal Manicure', price:999, dur:45, desc:'Crystal manicure treatment.'},
-  {id:71, cat:'Manicure', name:'Gel Manicure', price:1499, dur:60, desc:'Gel manicure treatment.'},
-  {id:72, cat:'Manicure', name:'Raaga Chocolate Manicure', price:999, dur:45, desc:'Raaga chocolate manicure.'},
-  {id:73, cat:'Manicure', name:'Raaga Strawberry Manicure', price:999, dur:45, desc:'Raaga strawberry manicure.'},
+  {id:69, cat:'Manicure', gender:'Unisex', name:'Normal Manicure', price:499, dur:30, desc:'Standard manicure.'},
+  {id:70, cat:'Manicure', gender:'Unisex', name:'Crystal Manicure', price:999, dur:45, desc:'Crystal manicure treatment.'},
+  {id:71, cat:'Manicure', gender:'Unisex', name:'Gel Manicure', price:1499, dur:60, desc:'Gel manicure treatment.'},
+  {id:72, cat:'Manicure', gender:'Unisex', name:'Raaga Chocolate Manicure', price:999, dur:45, desc:'Raaga chocolate manicure.'},
+  {id:73, cat:'Manicure', gender:'Unisex', name:'Raaga Strawberry Manicure', price:999, dur:45, desc:'Raaga strawberry manicure.'},
 
   // ---- Men's Packages (bundle price is the single bookable total) ----
-  {id:74, cat:"Men's Packages", name:'Package 1', price:249, dur:45, desc:'Hair cut + Shave + Head massage (value ₹310).'},
-  {id:75, cat:"Men's Packages", name:'Package 2', price:599, dur:60, desc:'Hair cut + Shave + Head massage + Face D-tan (value ₹810).'},
-  {id:76, cat:"Men's Packages", name:'Package 3', price:699, dur:75, desc:'Hair cut + Beard shaping + Advance hair colour + Face D-tan (value ₹1170).'},
-  {id:77, cat:"Men's Packages", name:'Package 4', price:899, dur:90, desc:'Hair cut + Shave + Face scrub & clean up + Hair spa (value ₹1260).'},
-  {id:78, cat:"Men's Packages", name:'Package 5', price:1099, dur:90, desc:'Hair cut + Shave + Face/neck D-tan + Fruit facial (value ₹1960).'},
-  {id:79, cat:"Men's Packages", name:'Package 6', price:1599, dur:120, desc:'Stylish hair cut + Stylish beard + Head massage + Face D-tan + Lotus facial (value ₹2150).'},
+  {id:74, cat:"Men's Packages", gender:'Men', name:'Package 1', price:249, dur:45, desc:'Hair cut + Shave + Head massage (value ₹310).'},
+  {id:75, cat:"Men's Packages", gender:'Men', name:'Package 2', price:599, dur:60, desc:'Hair cut + Shave + Head massage + Face D-tan (value ₹810).'},
+  {id:76, cat:"Men's Packages", gender:'Men', name:'Package 3', price:699, dur:75, desc:'Hair cut + Beard shaping + Advance hair colour + Face D-tan (value ₹1170).'},
+  {id:77, cat:"Men's Packages", gender:'Men', name:'Package 4', price:899, dur:90, desc:'Hair cut + Shave + Face scrub & clean up + Hair spa (value ₹1260).'},
+  {id:78, cat:"Men's Packages", gender:'Men', name:'Package 5', price:1099, dur:90, desc:'Hair cut + Shave + Face/neck D-tan + Fruit facial (value ₹1960).'},
+  {id:79, cat:"Men's Packages", gender:'Men', name:'Package 6', price:1599, dur:120, desc:'Stylish hair cut + Stylish beard + Head massage + Face D-tan + Lotus facial (value ₹2150).'},
+  {id:82, cat:"Men's Packages", gender:'Men', name:'Package 7', price:299, dur:60, desc:'Haircut + Hair wash + Setting (value ₹498).'},
 ];
 
 const CATEGORIES = ['All','Hair','Colour','Style','Hair Spa','Kids','Grooming','Treatment','Facial','Skin Care','Threading','Waxing','Rica Wax','Pedicure','Manicure',"Men's Packages"];
 
 let state = {
-  step: 1, search: '', activeCat: 'All', selected: [],
+  step: 1, search: '', activeCat: 'All', activeGender: 'All', selected: [],
   dateIdx: 0, time: null, name: '', phone: '', notes: ''
 };
+const GENDERS = ['All','Women','Men'];
 
 const STORE_PHONE = '917996700707';
 const STORE_NAME = 'Cut N Cute Studio';
@@ -416,8 +420,9 @@ function renderStepper(){
 function filteredServices(){
   return SERVICES.filter(s=>{
     const matchCat = state.activeCat === 'All' || s.cat === state.activeCat;
+    const matchGender = state.activeGender === 'All' || s.gender === state.activeGender || s.gender === 'Unisex';
     const matchSearch = s.name.toLowerCase().includes(state.search.toLowerCase());
-    return matchCat && matchSearch;
+    return matchCat && matchGender && matchSearch;
   });
 }
 
@@ -477,6 +482,9 @@ function renderServicesStep(){
           <input id="searchInput" placeholder="Search services — haircut, colour, beard..." value="${state.search}">
         </div>
         <div class="pills">
+          ${GENDERS.map(g=>`<div class="pill ${state.activeGender===g?'active':''}" onclick="setGender('${g}')">${g}</div>`).join('')}
+        </div>
+        <div class="pills">
           ${CATEGORIES.map(c=>`<div class="pill ${state.activeCat===c?'active':''}" onclick="setCat('${c}')">${c}</div>`).join('')}
         </div>
         <div>${listHTML}</div>
@@ -501,6 +509,7 @@ function toggleService(id){
   renderServicesStep();
 }
 function setCat(c){ state.activeCat = c; renderServicesStep(); }
+function setGender(g){ state.activeGender = g; renderServicesStep(); }
 
 function renderDateTimeStep(){
   const dateChips = DATES.map((d,i)=>{
