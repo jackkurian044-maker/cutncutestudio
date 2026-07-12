@@ -119,6 +119,25 @@
   }
   .pill:hover{ border-color:var(--gold); color:var(--gold-soft); }
   .pill.active{ background:var(--gold); border-color:var(--gold); color:var(--ink); }
+  .pill-selected{
+    display:flex; align-items:center; gap:7px;
+    border:1.5px solid var(--gold); background:var(--surface-2); color:var(--gold-soft);
+    padding:7px 15px; border-radius:999px; font-size:11.5px; font-weight:700;
+    letter-spacing:.05em; text-transform:uppercase; cursor:pointer;
+    transition:all .15s ease; margin-bottom:1.2rem;
+  }
+  .pill-selected:hover{ border-color:var(--gold-soft); }
+  .pill-selected.active{ background:var(--gold); border-color:var(--gold); color:var(--ink); }
+  .pill-selected .count{
+    background:var(--gold); color:var(--ink); border-radius:999px;
+    font-size:10.5px; padding:1px 7px; font-weight:700;
+  }
+  .pill-selected.active .count{ background:var(--ink); color:var(--gold-soft); }
+  .back-to-all{
+    font-size:11.5px; font-weight:600; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--muted); cursor:pointer; margin-bottom:1.2rem; display:inline-block;
+  }
+  .back-to-all:hover{ color:var(--gold-soft); }
 
   .cat-label{
     font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
@@ -220,6 +239,26 @@
 
   ::-webkit-scrollbar{ height:6px; }
   ::-webkit-scrollbar-thumb{ background:var(--line); border-radius:3px; }
+
+  @media(max-width:600px){
+    header{ padding:16px 5vw; }
+    .logo{ font-size:1rem; }
+    .back-link{ font-size:.7rem; }
+    .wrap{ padding:0 5vw; }
+    .card{ padding:1.7rem 1.3rem 1.5rem; }
+    .card h1{ font-size:1.5rem; }
+    .card .sub{ font-size:.82rem; margin-bottom:1.2rem; }
+    .stepper{ margin:1.8rem 0 1.6rem; }
+    .summary{ position:static; }
+    .nav-row .btn{ padding:12px 18px; font-size:.74rem; }
+    .confirm-box h2{ font-size:1.4rem; }
+  }
+  @media(max-width:420px){
+    .step-label{ display:none; }
+    .step.active .step-label{ display:block; font-size:10px; }
+    .step-line{ margin:0 6px; }
+    .date-chip{ width:54px; }
+  }
 </style>
 </head>
 <body>
@@ -254,9 +293,10 @@ const SERVICES = [
   // ---- Hair ----
   {id:1, cat:'Hair', gender:'Women', name:'Haircut — Women', price:399, dur:30, desc:'Any haircut, with a free consultation.'},
   {id:2, cat:'Hair', gender:'Men', name:'Haircut — Men', price:99, dur:20, desc:'Intro offer — any haircut, with a free consultation.'},
-  {id:3, cat:'Hair', gender:'Unisex', name:'Basic Cut', price:499, dur:30, desc:'Straightforward cut, no fuss.'},
-  {id:4, cat:'Hair', gender:'Unisex', name:'Layer Cut', price:799, dur:45, desc:'Layered shape for movement and volume.'},
-  {id:5, cat:'Hair', gender:'Unisex', name:'Advanced Cut', price:1199, dur:60, desc:'Precision cut with detailed finishing.'},
+  {id:83, cat:'Hair', gender:'Men', name:'Basic Haircut — Men', price:200, dur:25, desc:'Straightforward cut, no fuss.'},
+  {id:3, cat:'Hair', gender:'Women', name:'Basic Cut', price:499, dur:30, desc:'Straightforward cut, no fuss.'},
+  {id:4, cat:'Hair', gender:'Women', name:'Layer Cut', price:799, dur:45, desc:'Layered shape for movement and volume.'},
+  {id:5, cat:'Hair', gender:'Women', name:'Advanced Cut', price:1199, dur:60, desc:'Precision cut with detailed finishing.'},
 
   // ---- Colour ----
   {id:6, cat:'Colour', gender:'Unisex', name:'Colour & Highlights', price:1499, dur:90, desc:'Soft balayage to full colour, mixed fresh for your tone.'},
@@ -312,33 +352,33 @@ const SERVICES = [
 
   // ---- Threading ----
   {id:40, cat:'Threading', gender:'Unisex', name:'Eyebrow Threading', price:49, dur:10, desc:'Clean brow shaping.'},
-  {id:41, cat:'Threading', gender:'Unisex', name:'Upper Lip Threading', price:29, dur:5, desc:'Upper lip threading.'},
-  {id:42, cat:'Threading', gender:'Unisex', name:'Chin Threading', price:29, dur:5, desc:'Chin threading.'},
+  {id:41, cat:'Threading', gender:'Women', name:'Upper Lip Threading', price:29, dur:5, desc:'Upper lip threading.'},
+  {id:42, cat:'Threading', gender:'Women', name:'Chin Threading', price:29, dur:5, desc:'Chin threading.'},
   {id:43, cat:'Threading', gender:'Unisex', name:'Forehead Threading', price:29, dur:5, desc:'Forehead threading.'},
-  {id:44, cat:'Threading', gender:'Unisex', name:'Full Face Threading', price:249, dur:20, desc:'Complete face threading.'},
+  {id:44, cat:'Threading', gender:'Women', name:'Full Face Threading', price:249, dur:20, desc:'Complete face threading.'},
 
   // ---- Waxing ----
-  {id:45, cat:'Waxing', gender:'Unisex', name:'Upper Lip Wax', price:49, dur:10, desc:'Normal wax.'},
-  {id:46, cat:'Waxing', gender:'Unisex', name:'Under Arms Wax', price:149, dur:15, desc:'Normal wax.'},
+  {id:45, cat:'Waxing', gender:'Women', name:'Upper Lip Wax', price:49, dur:10, desc:'Normal wax.'},
+  {id:46, cat:'Waxing', gender:'Women', name:'Under Arms Wax', price:149, dur:15, desc:'Normal wax.'},
   {id:47, cat:'Waxing', gender:'Unisex', name:'Full Hand Wax', price:249, dur:20, desc:'Normal wax.'},
   {id:48, cat:'Waxing', gender:'Unisex', name:'Half Leg Wax', price:249, dur:20, desc:'Normal wax.'},
   {id:49, cat:'Waxing', gender:'Unisex', name:'Full Leg Wax', price:499, dur:30, desc:'Normal wax.'},
-  {id:50, cat:'Waxing', gender:'Unisex', name:'Stomach Wax', price:349, dur:20, desc:'Normal wax.'},
-  {id:51, cat:'Waxing', gender:'Unisex', name:'Full Face Wax', price:349, dur:20, desc:'Normal wax.'},
+  {id:50, cat:'Waxing', gender:'Women', name:'Stomach Wax', price:349, dur:20, desc:'Normal wax.'},
+  {id:51, cat:'Waxing', gender:'Women', name:'Full Face Wax', price:349, dur:20, desc:'Normal wax.'},
   {id:52, cat:'Waxing', gender:'Unisex', name:'Back Wax', price:449, dur:30, desc:'Normal wax.'},
   {id:53, cat:'Waxing', gender:'Women', name:'Bikini Wax', price:1199, dur:30, desc:'Normal wax.'},
-  {id:54, cat:'Waxing', gender:'Unisex', name:'Full Body Wax', price:1600, dur:60, desc:'Normal wax.'},
+  {id:54, cat:'Waxing', gender:'Women', name:'Full Body Wax', price:1600, dur:60, desc:'Normal wax.'},
 
   // ---- Rica Wax ----
-  {id:55, cat:'Rica Wax', gender:'Unisex', name:'Upper Lip Rica Wax', price:49, dur:10, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:56, cat:'Rica Wax', gender:'Unisex', name:'Cheeks Rica Wax', price:119, dur:15, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:57, cat:'Rica Wax', gender:'Unisex', name:'Under Arms Rica Wax', price:199, dur:20, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:55, cat:'Rica Wax', gender:'Women', name:'Upper Lip Rica Wax', price:49, dur:10, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:56, cat:'Rica Wax', gender:'Women', name:'Cheeks Rica Wax', price:119, dur:15, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:57, cat:'Rica Wax', gender:'Women', name:'Under Arms Rica Wax', price:199, dur:20, desc:'Gentler rice wax, lifts finer hair.'},
   {id:58, cat:'Rica Wax', gender:'Unisex', name:'Half Leg Rica Wax', price:449, dur:30, desc:'Gentler rice wax, lifts finer hair.'},
   {id:59, cat:'Rica Wax', gender:'Unisex', name:'Full Leg Rica Wax', price:899, dur:45, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:60, cat:'Rica Wax', gender:'Unisex', name:'Stomach Rica Wax', price:599, dur:30, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:60, cat:'Rica Wax', gender:'Women', name:'Stomach Rica Wax', price:599, dur:30, desc:'Gentler rice wax, lifts finer hair.'},
   {id:61, cat:'Rica Wax', gender:'Unisex', name:'Back Rica Wax', price:749, dur:40, desc:'Gentler rice wax, lifts finer hair.'},
   {id:62, cat:'Rica Wax', gender:'Women', name:'Bikini Rica Wax', price:1299, dur:35, desc:'Gentler rice wax, lifts finer hair.'},
-  {id:63, cat:'Rica Wax', gender:'Unisex', name:'Full Body Rica Wax', price:2799, dur:75, desc:'Gentler rice wax, lifts finer hair.'},
+  {id:63, cat:'Rica Wax', gender:'Women', name:'Full Body Rica Wax', price:2799, dur:75, desc:'Gentler rice wax, lifts finer hair.'},
 
   // ---- Pedicure ----
   {id:64, cat:'Pedicure', gender:'Unisex', name:'Normal Pedicure', price:499, dur:45, desc:'Standard pedicure.'},
@@ -368,6 +408,7 @@ const CATEGORIES = ['All','Hair','Colour','Style','Hair Spa','Kids','Grooming','
 
 let state = {
   step: 1, search: '', activeCat: 'All', activeGender: 'All', selected: [],
+  showSelectedOnly: false,
   dateIdx: 0, time: null, name: '', phone: '', notes: ''
 };
 const GENDERS = ['All','Women','Men'];
@@ -444,13 +485,16 @@ function summaryHTML(){
 }
 
 function renderServicesStep(){
-  const list = filteredServices();
+  const showingSelected = state.showSelectedOnly;
+  const list = showingSelected
+    ? SERVICES.filter(s=>state.selected.includes(s.id))
+    : filteredServices();
   const grouped = {};
   list.forEach(s=>{ (grouped[s.cat] = grouped[s.cat] || []).push(s); });
 
   let listHTML = '';
   if(list.length === 0){
-    listHTML = `<div class="empty-msg">No services match your search.</div>`;
+    listHTML = `<div class="empty-msg">${showingSelected ? "You haven't selected anything yet." : 'No services match your search.'}</div>`;
   } else {
     Object.keys(grouped).forEach(cat=>{
       listHTML += `<div class="cat-label">${cat}</div>`;
@@ -472,11 +516,11 @@ function renderServicesStep(){
     });
   }
 
-  document.getElementById('card').innerHTML = `
-    <h1>Select Services</h1>
-    <div class="sub">Location: <b>Kodihalli, Bengaluru</b> · Select one or more services</div>
-    <div class="layout">
-      <div>
+  const selectedToggle = showingSelected
+    ? `<span class="back-to-all" onclick="toggleShowSelected()">← All Services</span>`
+    : `<div class="pill-selected ${state.selected.length? '' : ''}" onclick="toggleShowSelected()">✓ Selected <span class="count">${state.selected.length}</span></div>`;
+
+  const filtersHTML = showingSelected ? '' : `
         <div class="search">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
           <input id="searchInput" placeholder="Search services — haircut, colour, beard..." value="${state.search}">
@@ -485,8 +529,16 @@ function renderServicesStep(){
           ${GENDERS.map(g=>`<div class="pill ${state.activeGender===g?'active':''}" onclick="setGender('${g}')">${g}</div>`).join('')}
         </div>
         <div class="pills">
-          ${CATEGORIES.map(c=>`<div class="pill ${state.activeCat===c?'active':''}" onclick="setCat('${c}')">${c}</div>`).join('')}
-        </div>
+          ${CATEGORIES.map(c=>`<div class="pill ${state.activeCat===c?'active':''}" onclick="setCat('${c.replace(/'/g, "\\'")}')">${c}</div>`).join('')}
+        </div>`;
+
+  document.getElementById('card').innerHTML = `
+    <h1>${showingSelected ? 'Your Selected Services' : 'Select Services'}</h1>
+    <div class="sub">Location: <b>Kodihalli, Bengaluru</b> · ${showingSelected ? 'Tap a service to remove it' : 'Select one or more services'}</div>
+    <div class="layout">
+      <div>
+        ${selectedToggle}
+        ${filtersHTML}
         <div>${listHTML}</div>
       </div>
       ${summaryHTML()}
@@ -496,12 +548,16 @@ function renderServicesStep(){
       <button class="btn btn-primary" ${state.selected.length===0?'disabled':''} onclick="goStep(2)">Continue</button>
     </div>
   `;
-  document.getElementById('searchInput').addEventListener('input', e=>{
-    state.search = e.target.value; renderServicesStep();
-    const inp = document.getElementById('searchInput');
-    inp.focus(); inp.setSelectionRange(inp.value.length, inp.value.length);
-  });
+  if(!showingSelected){
+    document.getElementById('searchInput').addEventListener('input', e=>{
+      state.search = e.target.value; renderServicesStep();
+      const inp = document.getElementById('searchInput');
+      inp.focus(); inp.setSelectionRange(inp.value.length, inp.value.length);
+    });
+  }
 }
+
+function toggleShowSelected(){ state.showSelectedOnly = !state.showSelectedOnly; renderServicesStep(); }
 
 function toggleService(id){
   const i = state.selected.indexOf(id);
