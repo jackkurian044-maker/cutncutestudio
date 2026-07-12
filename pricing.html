@@ -262,6 +262,7 @@ footer .fine{ font-size:.8rem; color:var(--muted); }
 }
 @media (min-width:640px){ .hub-grid{ grid-template-columns:repeat(2,1fr); } }
 @media (min-width:1000px){ .hub-grid{ grid-template-columns:repeat(3,1fr); } }
+.hub-card:last-child{ grid-column: 1 / -1; }
 .hub-card{ background:var(--surface); padding:2.4rem 2rem; transition:background .25s ease; }
 .hub-card:hover{ background:var(--surface-2); }
 .hub-card .cat{ font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); font-weight:600; }
